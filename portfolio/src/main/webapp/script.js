@@ -28,7 +28,8 @@ function addRandomGreeting() {
 }
 
 function getRandomGreetingUsingArrowFunctions() {
-  fetch('/data').then(response => response.text()).then((greeting) => {
-    document.getElementById('greeting-container').innerText = greeting;
+    console.log('fetch Json string from server and add to page');
+  fetch('/data').then(response => response.json()).then((greeting) => {
+    document.getElementById('greeting-container').innerHTML = greeting;
   });
 }
