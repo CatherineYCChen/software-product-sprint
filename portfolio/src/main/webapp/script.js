@@ -30,6 +30,13 @@ function addRandomGreeting() {
 function getRandomGreetingUsingArrowFunctions() {
     console.log('fetch Json string from server and add to page');
   fetch('/data').then(response => response.json()).then((greeting) => {
-    document.getElementById('greeting-container').innerHTML = greeting;
+    document.getElementById('greeting-container').innerText = greeting;
   });
 }
+
+function getSubtractionGame() {
+  fetch('/data').then(response => response.json()).then((game) => {
+    document.getElementById('total').innterText = game;
+  });
+}
+
