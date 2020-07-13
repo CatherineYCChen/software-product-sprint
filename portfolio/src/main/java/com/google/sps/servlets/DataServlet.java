@@ -14,6 +14,12 @@
 
 package com.google.sps.servlets;
 
+import com.google.appengine.api.datastore.DatastoreService;
+import com.google.appengine.api.datastore.DatastoreServiceFactory;
+import com.google.appengine.api.datastore.Entity;
+import com.google.appengine.api.datastore.PreparedQuery;
+import com.google.appengine.api.datastore.Query;
+import com.google.appengine.api.datastore.Query.SortDirection;
 import java.io.IOException;
 import com.google.gson.Gson;
 import java.util.ArrayList;
@@ -25,68 +31,77 @@ import javax.servlet.http.HttpServletResponse;
 
 /** Servlet that returns some example content. TODO: modify this file to handle comments data */
 @WebServlet("/data")
-public class DataServlet extends HttpServlet {
-  
-  //private List<String> greetings;
 
-  /*@Override
-  public void init() {
-    greetings = new ArrayList<>();
-    greetings.add("Nice to meet you");
-    greetings.add("Have a good day");
-    greetings.add("If you believe, you will achieve, and if you achieve, you will succeed.");
-    greetings.add("Have fun");
-    greetings.add("I like math");
-    greetings.add("My favourite animals are dogs");
-    greetings.add("My favourite sport is swimming");
-    greetings.add("Sleeping is important, please read 'Why We Sleep' by Matthew Walker");
-  }
-  */
+
+public class DataServlet extends HttpServlet {
+
+DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+boolean game = true;
 
   @Override
   public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    /*String greeting = greetings.get((int) (Math.random() * greetings.size()));
-    Gson gson = new Gson();
-    String json = gson.toJson(greeting);
+    
+    Query query = new Query("Task").addSort("timestamp", SortDirection.DESCENDING);
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    PreparedQuery results = datastore.prepare(query);
+    
+    //Create a list of guesses
+    List<String> tasks = new ArrayList<>();
+    for (Entity entity : results.asIterable()) {
+    
+      //Get title - i.e. guess
+      String title = (String) entity.getProperty("title");
 
-    response.setContentType("text/html;");
-    response.getWriter().println(json);
-    */
-    String guess = request.getParameter("player-choice");
-    response.setContentType("application/json");
-    String json = new Gson().toJson(guess);
-    response.getWriter().println(json);
+      //Add guess to list of guesses
+      tasks.add(title);
+    }
+    Gson gson = new Gson();
+    response.setContentType("application/json;");
+    //print out list of guesses
+    response.getWriter().println(gson.toJson(tasks));
 
   }
 
   @Override
   public void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
-    // Get the input from the form.
+
+    String title = request.getParameter("player-choice");
+    long timestamp = System.currentTimeMillis();
+    
+    Entity guessEntity = new Entity("Task");
+    guessEntity.setProperty("title", title);
+    guessEntity.setProperty("timestamp", timestamp);
+
+    DatastoreService datastore = DatastoreServiceFactory.getDatastoreService();
+    datastore.put(guessEntity);
+
     int playerChoice = getPlayerChoice(request);
 
-    if (playerChoice == 7) {
-      response.setContentType("text/html");
+    /*if (playerChoice == 7) {
+      response.setContentType("text/html;");
       response.getWriter().println("You're correct!");
-
       return;
     }
+    */
     
     if (playerChoice == -1) {
-      response.setContentType("text/html");
+      response.setContentType("text/html;");
       response.getWriter().println("Please enter an integer between 1 and 10.");
-
-      return;
+    return;
     }
-
-    else{
-      response.setContentType("text/html");
+    /*
+    if (playerChoice != -1 && playerChoice != 7){
+      response.setContentType("text/html;");
       response.getWriter().println("My favourite number from one to ten is 7.");
- 
-      return;
+    return;
     }
+    */
 
+    response.sendRedirect("/index.html");
+            
   }
   /** Returns the choice entered by the player, or -1 if the choice was invalid. */
+  
   private int getPlayerChoice(HttpServletRequest request) {
     // Get the input from the form.
     String playerChoiceString = request.getParameter("player-choice");
@@ -109,3 +124,4 @@ public class DataServlet extends HttpServlet {
     return playerChoice;
   }
 }
+

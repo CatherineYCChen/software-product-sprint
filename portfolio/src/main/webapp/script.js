@@ -15,7 +15,7 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
+/*function addRandomGreeting() {
   const greetings =
       ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!','How you doin\'?'];
 
@@ -33,10 +33,23 @@ function getRandomGreetingUsingArrowFunctions() {
     document.getElementById('greeting-container').innerText = greeting;
   });
 }
+*/
 
-function getSubtractionGame() {
-  fetch('/data').then(response => response.json()).then((game) => {
-    document.getElementById('total').innterText = game;
+function getNumberGame() {
+  fetch('/data').then(response => response.json()).then((tasks) => {
+
+    // Build the list of history entries.
+    const historyEl = document.getElementById('history');
+    tasks.forEach((title) => {
+      historyEl.appendChild(createListElement(title));
+    });
   });
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
 }
 
