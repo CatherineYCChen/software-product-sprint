@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="getNumberGame()">
     <div id="content">
       <h1>Catherine's Portfolio</h1>
       <h2>Brief Introduction</h2>
@@ -106,15 +106,27 @@
       
       <p><p>
       <h3>Just for Fun</h3>
-
         <h4>Number Game</h4>
-        <body onload="getNumberGame()">
-        <form action="/data" method="POST">
+
+        <form method="POST" action="/data">
             <p>Try and guess my favourite number from 1-10:</p>
             <input type="number" name="player-choice" min="1" max="10" value="1">
             <br/><br/>
-            <input type="submit" />
+            <button>Submit</button>
+            
         </form>
-    </div>
+        <button onclick= "seeAnswer()">See Answer</button>
+        <div id = "answer"></div>
+        <script>
+            function seeAnswer(){
+                document.getElementById("answer").innerHTML = "Seven";
+                
+                }
+            
+            </script>
+        <hr/>
+        <ul id="history"></ul>
+        
+
   </body>
 </html>
