@@ -36,6 +36,7 @@ function getRandomGreetingUsingArrowFunctions() {
 */
 google.charts.load('current', {'packages':['corechart']});
 google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(drawChart1);
 
 /** Creates a chart and adds it to the page. */
 function drawChart() {
@@ -48,7 +49,7 @@ function drawChart() {
           ['Workout', 1],
           ['Read', 1],
           ['Study', 3],
-          ['Eat', 3],
+          ['Eat/Break', 3],
           ['Sleep', 8]
         ]);
 
@@ -61,6 +62,31 @@ function drawChart() {
   const chart = new google.visualization.PieChart(
       document.getElementById('chart-container'));
   chart.draw(data, options);
+}
+
+function drawChart1() {
+  fetch('/chart-data').then(response => response.json())
+  .then((GDPvsCereal) => {
+    const data = new google.visualization.DataTable();
+    data.addColumn('string', 'GDP');
+    data.addColumn('number', 'Cereal');
+    Object.keys(GDPvsCereal).forEach((gdp) => {
+      data.addRow([gdp, GDPvsCereal[gdp]]);
+    });
+
+    const options = {
+      'title': 'GDP Per Capita vs. Cereal Consumption',
+      'width':600,
+      'height':500,
+      'legend': 'none',
+      'hAxis': {'title':'Cereal Consumption (US Dollar in Million)'},
+      'vAxis': {'title':'GDP (Current International Dollar)'}
+    };
+
+    const chart = new google.visualization.ScatterChart(
+        document.getElementById('chart-container1'));
+    chart.draw(data, options);
+  });
 }
 
 function getNumberGame() {
