@@ -34,6 +34,34 @@ function getRandomGreetingUsingArrowFunctions() {
   });
 }
 */
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+
+/** Creates a chart and adds it to the page. */
+function drawChart() {
+  const data = new google.visualization.DataTable();
+  data.addColumn('string', 'To-Do');
+  data.addColumn('number', 'Time');
+        data.addRows([
+          ['SPS', 2],
+          ['Work', 6],
+          ['Workout', 1],
+          ['Read', 1],
+          ['Study', 3],
+          ['Eat', 3],
+          ['Sleep', 8]
+        ]);
+
+  const options = {
+    'title': 'Daily Schedule',
+    'width':500,
+    'height':400
+  };
+
+  const chart = new google.visualization.PieChart(
+      document.getElementById('chart-container'));
+  chart.draw(data, options);
+}
 
 function getNumberGame() {
   fetch('/data').then(response => response.json()).then((tasks) => {
