@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Catherine's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="script.js"></script>
   </head>
   <body onload="getNumberGame()">
@@ -105,6 +106,9 @@
       <p>Click <a href= "https://github.com/CatherineYCChen">here</a> to see my Github profile. </p>
       
       <p><p>
+        <h1>Daily Schedule</h1>
+        <div id="chart-container"></div>
+    <hr/>
       <h3>Just for Fun</h3>
         <h4>Number Game</h4>
 
@@ -119,14 +123,10 @@
         <div id = "answer"></div>
         <script>
             function seeAnswer(){
-                document.getElementById("answer").innerHTML = "Seven";
-                
-                }
-            
+                document.getElementById("answer").innerHTML = "Seven";                
+                }            
             </script>
         <hr/>
         <ul id="history"></ul>
-        
-
   </body>
 </html>
