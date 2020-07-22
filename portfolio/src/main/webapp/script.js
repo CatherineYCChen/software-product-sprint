@@ -15,9 +15,9 @@
 /**
  * Adds a random greeting to the page.
  */
-function addRandomGreeting() {
+/*function addRandomGreeting() {
   const greetings =
-      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!'];
+      ['Hello world!', '¡Hola Mundo!', '你好，世界！', 'Bonjour le monde!','How you doin\'?'];
 
   // Pick a random greeting.
   const greeting = greetings[Math.floor(Math.random() * greetings.length)];
@@ -26,3 +26,84 @@ function addRandomGreeting() {
   const greetingContainer = document.getElementById('greeting-container');
   greetingContainer.innerText = greeting;
 }
+
+function getRandomGreetingUsingArrowFunctions() {
+    console.log('fetch Json string from server and add to page');
+  fetch('/data').then(response => response.json()).then((greeting) => {
+    document.getElementById('greeting-container').innerText = greeting;
+  });
+}
+*/
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+google.charts.setOnLoadCallback(drawChart1);
+
+/** Creates a chart and adds it to the page. */
+function drawChart() {
+  const data = new google.visualization.DataTable();
+  data.addColumn('string', 'To-Do');
+  data.addColumn('number', 'Time');
+        data.addRows([
+          ['SPS', 2],
+          ['Work', 6],
+          ['Workout', 1],
+          ['Read', 1],
+          ['Study', 3],
+          ['Eat/Break', 3],
+          ['Sleep', 8]
+        ]);
+
+  const options = {
+    'title': 'Daily Schedule',
+    'width':500,
+    'height':400
+  };
+
+  const chart = new google.visualization.PieChart(
+      document.getElementById('chart-container'));
+  chart.draw(data, options);
+}
+
+function drawChart1() {
+  fetch('/chart-data').then(response => response.json())
+  .then((GDPvsCereal) => {
+    const data = new google.visualization.DataTable();
+    data.addColumn('string', 'GDP');
+    data.addColumn('number', 'Cereal');
+    Object.keys(GDPvsCereal).forEach((gdp) => {
+      data.addRow([gdp, GDPvsCereal[gdp]]);
+    });
+
+    const options = {
+      'title': 'GDP Per Capita vs. Cereal Consumption',
+      'width':600,
+      'height':500,
+      'legend': 'none',
+      'hAxis': {'title':'Cereal Consumption (US Dollar in Million)'},
+      'vAxis': {'title':'GDP (Current International Dollar)'}
+    };
+
+    const chart = new google.visualization.ScatterChart(
+        document.getElementById('chart-container1'));
+    chart.draw(data, options);
+  });
+}
+
+function getNumberGame() {
+  fetch('/data').then(response => response.json()).then((tasks) => {
+
+    // Build the list of history entries.
+    const historyEl = document.getElementById('history');
+    tasks.forEach((title) => {
+      historyEl.appendChild(createListElement(title));
+    });
+  });
+}
+
+/** Creates an <li> element containing text. */
+function createListElement(text) {
+  const liElement = document.createElement('li');
+  liElement.innerText = text;
+  return liElement;
+}
+

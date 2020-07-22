@@ -2,17 +2,143 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>My Portfolio</title>
+    <title>Catherine's Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="script.js"></script>
   </head>
-  <body>
+  <body onload="getNumberGame()">
     <div id="content">
-      <h1>My Portfolio</h1>
-      <p>This is my portfolio.</p>
-      <p>Click here to get a random message:</p>
-      <button onclick="addRandomGreeting()">Hello</button>
-      <div id="greeting-container"></div>
-    </div>
+      <h1>Catherine's Portfolio</h1>
+      <h2>Brief Introduction</h2>
+      <p>Hi! My name is Catherine Yu-Chi Chen. I am currently a junior at 
+          <a href= "https://www.columbia.edu/">Columbia University of New York.</a></p>
+      <img src="images/IMG_0514 2.JPG" width="400" height="300"/>
+      <p style="color:DodgerBlue;">Fun Fact: Columbia's school colour, Patone 290, 
+          is one of my favourite colours as well. (btw, this colour is not Pantone 290 lol)</p>
+      
+      <h2>About Me: Background</h2>
+      <p>I was born in Taipei, Taiwan in 2000. Along with my mother, and sister, I immigrated to 
+          Toronto, Canada in 2010, while my father stayed in Taiwan to work and support our family.</p>
+      <p>I studied in Canada from grade 5 to 12, and I attended high school at 
+          <a href= "https://earlhaig.ca/main.php">Earl Haig Secondary School</a>, where I was part of the 
+          <a href="https://earlhaig.ca/departments/claude/site/index.php">Claude Watson Arts Program</a>
+           as a music major specializing in the cello.</p>
+      <img src="images/IMG_0516.JPG" width="300" height="500"/>
+      
+      <h3>My Music Experience</h3>
+      <p>I began my musical journey by playing piano in kindergarden.</p> 
+      <img src="images/Chen_Catherine.jpg" width="200" height="225"/>
+      <p>Afterwards, my elementary school required that the students participate in some sort of 
+          extra-curriculum activity, and I experimented with many things. Ultimately, I began playing 
+          the cello seriously when I was 10 years old and continued until I was a sophomore in high school.
+           During my junior and senior years of high school, I focused more on chamber and orchestral music, 
+           as well as composition</p>
+      <video width= "300" height="500" controls>
+          <source src="images/IMG_4949.m4v" type="video/mp4">
+          </video>
+    <p>This was filmed quite a while back and quite hastily, so my playing isn't the best haha.</p>
+      <p>For more information about my musical journey click 
+          <a href= "https://catherineycchen.weebly.com/m-background.html">here.</a>
+      <p>To listen to some of my compositions click <a href= "https://musescore.com/user/23950711">here.</a>
+      
+      <h3>Other Interests</h3>
+      <h4>Visual Art</h4>
+      <img src="images/IMG_0074.JPG" width="475" height="300"/>
+      <p>I enjoy an array of mediums for visual arts, from sketching, to painting, calligraphy, sewing, 
+          woodwork, sculpting, and photoshop.</p>
+      <p>I have never undergone professional training in art, but I like doing it in my spare time.</p>
+      
+      <p>To see some of my other works, click <a href="https://catherineycchen.weebly.com/art.html">here.</a></p>
+      <p>Click <a href="images.html">here</a> to see some of my favourite artwork!</p>
+      
+      <h4>Swimming</h4>
+      <p>I have been swimming since I was in kindergarden, and I was on the swim team in high school. </p>
+    
+      <h4>Dogs</h4>
+      <p>I have two dogs: Minnie the Mini Pinscher, and LuLu the Doberman. Unfortunately, 
+          Minnie passed away last spring.</p>
+      <img src="images/IMG_6758.JPG" width="300" height="500"/>
+      <img src="images/IMG_1893.JPG" width="400" height="275"/>
+
+      <h2>About Me: Where Am I Now? Data Science</h2>
+        <p>In my senior year of high school, I took a course called Data Management, which included
+            topics that covered probability theory, and basic regressions/analysis. For my cumulative 
+            project in that class, I conducted research on the relationship between a country's
+            GDP per capita, and cereal consumption per capita - which I was interested in after 
+            reading the book 'Guns, Germs, and Steel'. As the book outlines, there appears to be a
+            positive correlation between the two variables:
+        </p>
+            <div id="chart-container1"></div>
+
+        <p>Upon taking this course, I became enticed by the field of data science. However, I was still new 
+            to the area, and so during my first and second year of college, I experimented with
+            different subjects - math, chemistry, computer science, etc. However, my passion for data persisted
+            and I ultimately declared as a Data Science major this spring. Data Science
+            is a special joint-major that is offered by the statistics 
+            and computer science department at Columbia 
+            that was created in response to the growing significance of "big data".
+      </p>
+      <h3>Working Experiences</h3>
+      <p>Below is a list of some of my past/current working experiences:</p>
+      <dl>
+          <dt><b>Intern at Industrial Technology Research Institute</b></dt>
+          <p><p>
+          <dd>July 2018 - August 2018</dd>
+          <p><p>
+          <dd>ITRI is a leading research and development institution in Taiwan that 
+              works towards transforming Taiwan's technology industry. At ITRI, I worked in the 
+              biomaterials lab, where I assisted in conducting experiments for biomaterial development,
+              and conducted research on the innovation of various biomaterials.</dd>
+          <p><p>
+          <dt><b>Intern at Point Robotics MedTech Inc. Intern</b></dt>
+          <p><p>
+          <dd>July 2019 - August 2019</dd>
+          <p><p>
+          <dd>Point Robotics is a relatively new company that develops surgical robots relying on
+              computer vision, machine learning, and AI, to perform spinal surgeries. At Point Robotics,
+              I developed a program for 3D image reconstruction, GUI development for the program, and 
+              implemented the program to perform 3D printing of the reconstructed models. In addition,
+              I conducted research on various computer vision techniques in order to improve image reconstruction,
+              as well as other recognition technologies required for the surgical robots.
+          </dd>
+          <p><p>
+          <dt><b>Residential Advisor at Columbia University</b></dt>
+          <p><p>
+          <dd>August 2019 - Present</dd>
+          <p><p>
+          <dd>I am currently working as a residential advisor at Columbia University. As a residential advisor,
+              I facilitate interaction among students as well as hall directors to ensure a 
+              welcoming and inclusive environment on campus. Some of my responsibilities include, the organization
+              of social events, observation and improvement of campus residential life,
+              , and management of financial resources in student life.</dd>
+      </dl>
+      <p>Click <a href= "https://www.linkedin.com/in/catherine-chen-6b037591/">here</a> to see my Linkedin profile.</p>
+      <p>Click <a href= "https://github.com/CatherineYCChen">here</a> to see my Github profile. </p>
+      
+      <p><p>
+        </br>
+        <h3>My Current Daily Schedule (not accurate haha)</h3>
+        <div id="chart-container"></div>
+    <hr/>
+      <h3>Just for Fun</h3>
+        <h4>Number Game</h4>
+
+        <form method="POST" action="/data">
+            <p>Try and guess my favourite number from 1-10:</p>
+            <input type="number" name="player-choice" min="1" max="10" value="1">
+            <br/><br/>
+            <button>Submit</button>
+            
+        </form>
+        <button onclick= "seeAnswer()">See Answer</button>
+        <div id = "answer"></div>
+        <script>
+            function seeAnswer(){
+                document.getElementById("answer").innerHTML = "Seven";                
+                }            
+            </script>
+        <hr/>
+        <ul id="history"></ul>
   </body>
 </html>
