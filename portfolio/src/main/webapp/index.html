@@ -2,22 +2,54 @@
 <html>
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <title>Catherine's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+
     <script src="https://www.gstatic.com/charts/loader.js"></script>
     <script src="script.js"></script>
   </head>
+  
   <body onload="getNumberGame()">
-    <div id="content">
-      <h1>Catherine's Portfolio</h1>
-      <h2>Brief Introduction</h2>
-      <p>Hi! My name is Catherine Yu-Chi Chen. I am currently a junior at 
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-wide w3-padding w3-card">
+    <a href="#home" class="w3-bar-item w3-button"><b>Catherine Chen's</b> Portfolio</a>
+    <!-- Float links to the right. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="#about" class="w3-bar-item w3-button">About Me</a>
+      <a href="#music" class="w3-bar-item w3-button">Music</a>
+      <a href="#art" class="w3-bar-item w3-button">Art</a>
+      <a href="#data" class="w3-bar-item w3-button">Data Science</a>
+      <a href="#experience" class="w3-bar-item w3-button">Experience</a>
+      <a href="#fun" class="w3-bar-item w3-button">Fun Stuff</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact Me</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1500px;" id="home">
+  <img class="w3-image" src="images/IMG_0514 2.JPG" alt="Architecture" width="1600" height="1200">
+  <div class="w3-display-middle w3-margin-top w3-center">
+    <h1 class="w3-xxlarge w3-text-white"><span class="w3-padding w3-black w3-opacity-min"><b>CATHERINE CHEN</b></span> <span class="w3-hide-small w3-text-light-grey">Portfolio</span></h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content w3-padding" style="max-width:1564px">
+
+
+  <!-- About Section -->
+  <div class="w3-container w3-padding-32" id="about">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">About Me</h3>
+    <p>Hi! My name is Catherine Yu-Chi Chen. I am currently a junior at 
           <a href= "https://www.columbia.edu/">Columbia University of New York.</a></p>
-      <img src="images/IMG_0514 2.JPG" width="400" height="300"/>
       <p style="color:DodgerBlue;">Fun Fact: Columbia's school colour, Patone 290, 
           is one of my favourite colours as well. (btw, this colour is not Pantone 290 lol)</p>
       
-      <h2>About Me: Background</h2>
       <p>I was born in Taipei, Taiwan in 2000. Along with my mother, and sister, I immigrated to 
           Toronto, Canada in 2010, while my father stayed in Taiwan to work and support our family.</p>
       <p>I studied in Canada from grade 5 to 12, and I attended high school at 
@@ -26,31 +58,6 @@
            as a music major specializing in the cello.</p>
       <img src="images/IMG_0516.JPG" width="300" height="500"/>
       
-      <h3>My Music Experience</h3>
-      <p>I began my musical journey by playing piano in kindergarden.</p> 
-      <img src="images/Chen_Catherine.jpg" width="200" height="225"/>
-      <p>Afterwards, my elementary school required that the students participate in some sort of 
-          extra-curriculum activity, and I experimented with many things. Ultimately, I began playing 
-          the cello seriously when I was 10 years old and continued until I was a sophomore in high school.
-           During my junior and senior years of high school, I focused more on chamber and orchestral music, 
-           as well as composition</p>
-      <video width= "300" height="500" controls>
-          <source src="images/IMG_4949.m4v" type="video/mp4">
-          </video>
-    <p>This was filmed quite a while back and quite hastily, so my playing isn't the best haha.</p>
-      <p>For more information about my musical journey click 
-          <a href= "https://catherineycchen.weebly.com/m-background.html">here.</a>
-      <p>To listen to some of my compositions click <a href= "https://musescore.com/user/23950711">here.</a>
-      
-      <h3>Other Interests</h3>
-      <h4>Visual Art</h4>
-      <img src="images/IMG_0074.JPG" width="475" height="300"/>
-      <p>I enjoy an array of mediums for visual arts, from sketching, to painting, calligraphy, sewing, 
-          woodwork, sculpting, and photoshop.</p>
-      <p>I have never undergone professional training in art, but I like doing it in my spare time.</p>
-      
-      <p>To see some of my other works, click <a href="https://catherineycchen.weebly.com/art.html">here.</a></p>
-      <p>Click <a href="images.html">here</a> to see some of my favourite artwork!</p>
       
       <h4>Swimming</h4>
       <p>I have been swimming since I was in kindergarden, and I was on the swim team in high school. </p>
@@ -60,8 +67,93 @@
           Minnie passed away last spring.</p>
       <img src="images/IMG_6758.JPG" width="300" height="500"/>
       <img src="images/IMG_1893.JPG" width="400" height="275"/>
+  </div>
 
-      <h2>About Me: Where Am I Now? Data Science</h2>
+
+
+
+  <!-- Music Section -->
+  <div class="w3-container w3-padding-32" id="music">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Music</h3>
+      <p>I began my musical journey by playing piano in kindergarden.</p> 
+      <img src="images/Chen_Catherine.jpg" width="200" height="225"/>
+      <p>Afterwards, my elementary school required that the students participate in some sort of 
+          extra-curriculum activity, and I experimented with many things. Ultimately, I began playing 
+          the cello seriously when I was 10 years old and continued until I was a sophomore in high school.
+           During my junior and senior years of high school, I focused more on chamber and orchestral music, 
+           as well as composition</p>
+
+      <p>For more information about my musical journey click 
+          <a href= "https://catherineycchen.weebly.com/m-background.html">here.</a>
+      <p>To listen to some of my compositions click <a href= "https://musescore.com/user/23950711">here.</a>
+
+  </div>
+
+<!-- Art Section -->
+  <div class="w3-container w3-padding-32" id="art">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Art</h3>
+    <p>I enjoy an array of mediums for visual arts, from sketching, to painting, calligraphy, sewing, 
+          woodwork, sculpting, and photoshop.</p>
+      <p>I have never undergone professional training in art, but I like doing it in my spare time.</p>
+      
+      <p>To see some of my other works, click <a href="https://catherineycchen.weebly.com/art.html">here.</a></p>
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Eiffel Tower: Woodwork and Circuits</div>
+        <img src="images/Screen Shot 2017-08-08 at 8.43.18 AM.png" width="300" height="450"/>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Music: Acrylic</div>
+        <img src="images/IMG_0074.JPG" width="300" height="300"/>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Legos: Watercolour</div>
+            <img src="images/IMG_0064.JPG" width="300" height="300"/>
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Calligraphy</div>
+            <img src="images/優選陳聿淇-贈花卿 (Small).jpg" width="300" height="900"/>
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Hunger Games: Sketching</div>
+        <img src="/images/sketch.jpg" width="300" height="400">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Grapes: Emboidery</div>
+        <img src="/images/grapes.png" width="300" height="400">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Robot: Sculpting</div>
+        <img src="/images/robot.JPG" width="300" height="600">
+      </div>
+    </div>
+    <div class="w3-col l3 m6 w3-margin-bottom">
+      <div class="w3-display-container">
+        <div class="w3-display-topleft w3-black w3-padding">Guitar: Sculpting</div>
+        <img src="/images/guitar.png" width="300" height="400">
+      </div>
+    </div>
+  </div>
+
+<!-- Data Science Section -->
+  <div class="w3-container w3-padding-32" id="data">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Data Science</h3>
         <p>In my senior year of high school, I took a course called Data Management, which included
             topics that covered probability theory, and basic regressions/analysis. For my cumulative 
             project in that class, I conducted research on the relationship between a country's
@@ -79,7 +171,12 @@
             and computer science department at Columbia 
             that was created in response to the growing significance of "big data".
       </p>
-      <h3>Working Experiences</h3>
+  </div>
+
+
+<!-- Experience Section -->
+  <div class="w3-container w3-padding-32" id="experience">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Experience</h3>
       <p>Below is a list of some of my past/current working experiences:</p>
       <dl>
           <dt><b>Intern at Industrial Technology Research Institute</b></dt>
@@ -113,12 +210,12 @@
               of social events, observation and improvement of campus residential life,
               , and management of financial resources in student life.</dd>
       </dl>
-      <p>Click <a href= "https://www.linkedin.com/in/catherine-chen-6b037591/">here</a> to see my Linkedin profile.</p>
-      <p>Click <a href= "https://github.com/CatherineYCChen">here</a> to see my Github profile. </p>
-      
-      <p><p>
-        </br>
-        <h3>My Current Daily Schedule (not accurate haha)</h3>
+  </div>
+
+<!-- Fun Section -->
+  <div class="w3-container w3-padding-32" id="fun">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Fun</h3>
+     <h3>My Current Daily Schedule (not accurate haha)</h3>
         <div id="chart-container"></div>
     <hr/>
       <h3>Just for Fun</h3>
@@ -140,5 +237,18 @@
             </script>
         <hr/>
         <ul id="history"></ul>
+  </div>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-32" id="contact">
+    <h3 class="w3-border-bottom w3-border-light-grey w3-padding-16">Contact Me</h3>
+    <p>Get in contact with me!</p>
+    <p>Email: chen.yc.catherine@gmail.com</p>
+    <p>LinkedIn: <a href= "https://www.linkedin.com/in/catherine-chen-6b037591/">Catherine's LinkedIn</a></p>
+    <p>GitHub: <a href= "https://github.com/CatherineYCChen">Catherine's GitHub</a></p>
+  </div>
+
+<!-- End page content -->
+
   </body>
 </html>
